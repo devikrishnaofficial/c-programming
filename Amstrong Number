@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<math.h>
+#define MAX 100
+
+int function(int num)
+{
+   int count,k,sum=0,flag=1,a=num,n=num;
+   while(a!=0)
+   {
+       count++;
+       a=a/10;
+   }
+   while(n!=0)
+   {
+       k=n%10;
+       sum=sum+pow(k,count);
+       n=n/10;
+   }
+   if(sum==num)
+   {
+       flag=1;
+   }
+   else
+   {
+       flag=0;
+   }
+   return flag;
+}
+void main()
+{  
+    int num;
+    scanf("%d",&num);
+    int out=function(num);
+    printf("%d",out);
+}
